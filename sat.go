@@ -25,20 +25,20 @@ func main() {
 		//check the condition while iterating through SAT for the first launch site
 		if count <= 4 {
 			LS1 = append(LS1, i)
-			time.Sleep(2400 * time.Millisecond)
 			count++ //increment count until the condition is invalid
 			//when count reaches 5th satellite we Launch from the first launch site and make a new array LS1
 			if count == 5 {
+				time.Sleep(10000 * time.Millisecond) //wait for 10sec for launching the sattelites
 				fmt.Println("LS1: ", LS1)
 				LS1 = make([]int, 0)
 			}
 			//when count reaches 5th satellite we go into this statement until we reach count <= 8
 		} else if count > 4 && count <= 8 {
 			LS2 = append(LS2, i)
-			time.Sleep(2400 * time.Millisecond)
 			count++ //increment count until the condition is invalid
 			//when count reaches 9th satellite we Launch from the second launch site and make a new array LS2
 			if count == 9 {
+				time.Sleep(10000 * time.Millisecond) //wait for 10sec for launching the sattelites
 				fmt.Println("LS2: ", LS2)
 				LS2 = make([]int, 0)
 				count = 1 //here we reset the value of count for further sattelites
